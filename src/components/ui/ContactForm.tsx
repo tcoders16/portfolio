@@ -26,7 +26,7 @@ const handleCopy = (value: string, field: "email" | "phone") => {
 
 
   return (
-    <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black poppins-medium">
+    <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl sm:mt-20 md:p-8 dark:bg-black poppins-medium">
       <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
 
         Contact
