@@ -16,7 +16,7 @@ const App = () => {
           <RevealSection />
 
   {/* Navigation  */}
-    <div className="fixed left-0 right-0 top-[73%] z-[999] flex justify-center">
+    <div className="fixed -bottom-[190px] left-0 right-0 z-[999] flex justify-center">
       <FloatingNav />
     </div>
 
@@ -36,9 +36,9 @@ const App = () => {
         <Projects />
       </div>
       {/* Signup form section */}
-      <div>
-        <ContactForm />
-      </div>
+    <div className="h-screen flex items-center justify-center">
+      <ContactForm />
+    </div>
     </div>
   );
 };
