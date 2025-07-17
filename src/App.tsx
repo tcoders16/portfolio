@@ -1,24 +1,19 @@
 import ZoomOnScroll from './components/ZoomOnScroll';
 import RevealSection from './components/RevealSection';
-
-
-
-
-import { AppleCardsCarouselDemo } from './components/ui/AppleCardsCarouselDemo';
-import {TimelineDemo} from './components/ui/TimelineDemo';
-import { SignupFormDemo } from './components/ui/SignupFormDemo';
-import { AnimatedTestimonialsDemo } from './components/ui/AnimatedTestimonialsDemo';
-import ApplePinDemo from './components/ui/AnimatedPinDemo'
-
 import { FloatingNav } from './components/FloatingNav';
+import { ContactForm } from './components/ui/ContactForm';
+import { Projects } from './components/ui/Projects';
+import { MoreAbtMe } from './components/ui/MoreAbtMe';
+import { TechStack } from './components/ui/TechStack';
+import Community from './components/ui/Community';
 
 const App = () => {
   return (
     <div>
       {/* Scroll-based animation section */}
-      <ZoomOnScroll />
+          <ZoomOnScroll />
       {/* Section reveal on scroll */}
-      <RevealSection />
+          <RevealSection />
 
   {/* Navigation  */}
     <div className="fixed left-0 right-0 top-[73%] z-[999] flex justify-center">
@@ -26,25 +21,23 @@ const App = () => {
     </div>
 
       <div>
-        <ApplePinDemo/>
+        <Community/>
       </div>
-
-
       {/* Tech Stack  */}
       <div>
-        <AnimatedTestimonialsDemo />
+        <TechStack />
       </div>
 
         <div>
-            <AppleCardsCarouselDemo />
+            <MoreAbtMe />
         </div>
       {/* Timeline section */}
       <div className="bg-white dark:bg-neutral-950">
-        <TimelineDemo />
+        <Projects />
       </div>
       {/* Signup form section */}
       <div>
-        <SignupFormDemo />
+        <ContactForm />
       </div>
     </div>
   );

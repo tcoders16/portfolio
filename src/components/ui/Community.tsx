@@ -2,7 +2,7 @@
 
 import { PinContainer } from "../3d-pin";
 
-export default function AnimatedPinDemo() {
+export default function Community() {
   return (
     <div className="h-[40rem] w-full flex items-center justify-center poppins-thin">
       <PinContainer
