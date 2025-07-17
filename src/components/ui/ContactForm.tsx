@@ -23,6 +23,8 @@ const handleCopy = (value: string, field: "email" | "phone") => {
     console.log("Form submitted");
   };
 
+
+
   return (
     <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black poppins-medium">
       <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-200">
@@ -126,6 +128,7 @@ const handleCopy = (value: string, field: "email" | "phone") => {
         <button
           className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
           type="submit"
+
         >
           CONTACT &rarr;
           <BottomGradient />
