@@ -21,11 +21,9 @@ const App = () => {
       <RevealSection />
 
   {/* Navigation  */}
-    <div className="fixed left-0 right-0 top-[42rem] z-[999] flex justify-center">
+    <div className="fixed left-0 right-0 top-[73%] z-[999] flex justify-center">
       <FloatingNav />
     </div>
-
-
 
       <div>
         <ApplePinDemo/>
