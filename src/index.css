@@ -106,6 +106,7 @@
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
   overflow-y: auto; /* or scroll */
   -webkit-overflow-scrolling: touch; /* for smooth scroll on iOS */
 }
