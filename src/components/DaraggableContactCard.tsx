@@ -67,10 +67,12 @@ export default function DraggableContactCard() {
         {/* Card Color */}
 <div
   className="bg-gradient-to-br from-[#0b0b0b] via-[#0e0e0e] to-[#121212]
-             border-3 border-cyan-400
-             rounded-2xl px-10 py-8 w-[420px]
+             border border-cyan-400
+             rounded-2xl
+             px-4 py-5 sm:px-10 sm:py-8
+             w-full max-w-xs sm:w-[420px]
              text-white cursor-pointer font-pixel
-             transition-all duration-300 hover:scale-[1.2]
+             transition-all duration-300 hover:scale-[1.02] sm:hover:scale-[1.08]
              shadow-[0_0_12px_#00f2ff55] backdrop-blur-xl"
   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 >
@@ -108,7 +110,7 @@ export default function DraggableContactCard() {
       </button>
     </span>
     <span className="block mt-2">
-      <span className="text-amber-300 font-semibold">Note:</span> Hit the card on top to scroll!!!!
+      <span className="text-amber-300 font-regular">Note:</span> Hit the card on top to scroll or Interact with Card
     </span>
   </p>
 </div>
