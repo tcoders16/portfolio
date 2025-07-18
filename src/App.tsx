@@ -1,7 +1,7 @@
 import ZoomOnScroll from './components/ZoomOnScroll';
 import RevealSection from './components/RevealSection';
 import { FloatingNav } from './components/FloatingNav';
-import { ContactForm } from './components/ui/ContactForm';
+
 import { Projects } from './components/ui/Projects';
 import { MoreAbtMe } from './components/ui/MoreAbtMe';
 import { TechStack } from './components/ui/TechStack';
