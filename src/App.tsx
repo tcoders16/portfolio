@@ -6,10 +6,15 @@ import { Projects } from './components/ui/Projects';
 import { MoreAbtMe } from './components/ui/MoreAbtMe';
 import { TechStack } from './components/ui/TechStack';
 import Community from './components/ui/Community';
+import ContactMe from './components/ContactMe';
+import DraggableContactCard from './components/DaraggableContactCard';
 
 const App = () => {
   return (
     <div>
+      <div>
+          <DraggableContactCard/>
+        </div>
       <div id = "home">
         {/* Scroll-based animation section */}
             <ZoomOnScroll />
@@ -38,9 +43,12 @@ const App = () => {
         <Projects />
       </div>
       {/* Signup form section */}
-    <div id="contact" className="h-screen flex items-center justify-center">
-      <ContactForm />
-    </div>
+        <div id="contact" className="min-h-screen w-screen flex items-center justify-center bg-cover bg-center">
+          <ContactMe  />
+        </div>
+
+
+
     </div>
   );
 };

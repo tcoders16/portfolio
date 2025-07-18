@@ -1,13 +1,25 @@
 "use client";
 import React, { useState } from "react";
 import { Label } from "../lable";
-import { Input } from "../input";
+import { Input } from "../Input";
 import { cn } from "../../lib/util";
 
 
 
 export function ContactForm() {
   const [copiedField, setCopiedField] = useState<"email" | "phone" | null>(null);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [senderEmail, setSenderEmail] = useState("");
+  const [senderPhone, setSenderPhone] = useState("");
+  const [senderMessage, setSenderMessage] = useState("Hey Omkumar! Let's connect!");
+  // const [loading, setLoading] = useState(false);
+  // const [sent, setSent] = useState(false);
+
+
+
+
+
   const email = "emailtosolankiom@gmail.com";
   const phone = "+1 (289)-400-8975";
 
@@ -18,10 +30,10 @@ const handleCopy = (value: string, field: "email" | "phone") => {
   });
 };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted");
-  };
+  // const handleSend = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   console.log("Form submitted");
+  // };
 
 
 
@@ -50,6 +62,7 @@ const handleCopy = (value: string, field: "email" | "phone") => {
           <Input
             id="emailOmkumar"
             className="poppins-light"
+            readOnly
             value={email}
 
           />
@@ -75,6 +88,7 @@ const handleCopy = (value: string, field: "email" | "phone") => {
           <Input
             id="phoneOmkumar"
             className="poppins-light"
+            readOnly
             value={phone}
 
           />
@@ -102,51 +116,94 @@ const handleCopy = (value: string, field: "email" | "phone") => {
           Enter Your Details
         </Label>
 
-      <form className="my-5 mt-6" onSubmit={handleSubmit}>
-        <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
-          <LabelInputContainer>
-            <Label htmlFor="hisFirstname">First name</Label>
-            <Input id="firstname" placeholder="Om" className="poppins-light" type="text" />
-          </LabelInputContainer>
-          <LabelInputContainer>
-            <Label htmlFor="hisLastname">Last name</Label>
-            <Input id="lastname" placeholder="Solanki"  className="poppins-light" type="text" />
-          </LabelInputContainer>
-        </div>
 
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="hisNumber">Phone Number</Label>
-          <Input id="password" placeholder="+1 (647)-708-2575" className="poppins-light" type="password" />
-        </LabelInputContainer>
+        {/* Contact Form  */}
+<div className="my-5 mt-6">
+  {/* First + Last Name */}
+  <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
+    <LabelInputContainer>
+      <Label htmlFor="firstName">First name</Label>
+      <input
+        id="firstName"
+        placeholder="Om"
+        className="poppins-light shadow-input flex w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600"
+        type="text"
+        value={firstName}
+        onChange={(e) => setFirstName(e.target.value)}
+      />
+    </LabelInputContainer>
 
-        <LabelInputContainer className="mb-4">
-          <Label htmlFor="hisEmail">Email</Label>
-          <Input id="password" placeholder="tcoders08164002@gmail.com" className="poppins-light" type="password" />
-        </LabelInputContainer>
+    <LabelInputContainer>
+      <Label htmlFor="lastName">Last name</Label>
+      <input
+        id="lastName"
+        placeholder="Solanki"
+        className="poppins-light shadow-input flex w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600"
+        type="text"
+        value={lastName}
+        onChange={(e) => setLastName(e.target.value)}
+      />
+    </LabelInputContainer>
+  </div>
 
+  {/* Phone */}
+  <LabelInputContainer className="mb-4">
+    <Label htmlFor="senderPhone">Phone Number</Label>
+    <input
+      id="senderPhone"
+      placeholder="+1 (647)-708-2575"
+      className="poppins-light shadow-input flex w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600"
+      type="tel"
+      inputMode="numeric"
+      pattern="[0-9]*"
+      value={senderPhone}
+      onChange={(e) => setSenderPhone(e.target.value.replace(/\D/g, ""))}
+    />
+  </LabelInputContainer>
 
-        <button
-          className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
-          type="submit"
+  {/* Email */}
+  <LabelInputContainer className="mb-4">
+    <Label htmlFor="email">Email</Label>
+    <input
+      id="senderEmail"
+      name="email"
+      inputMode="email"
+      placeholder="tcoders08164002@gmail.com"
+      className="poppins-light shadow-input flex w-full rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none dark:bg-zinc-800 dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600"
+      type="email"
+      value={senderEmail}
+      onChange={(e) => setSenderEmail(e.target.value)}
+    />
+  </LabelInputContainer>
 
-        >
-          CONTACT &rarr;
-          <BottomGradient />
-        </button>
+  {/* Message */}
+  <LabelInputContainer className="mb-4">
+    <Label htmlFor="message">Enter Your Message Here:</Label>
+    <textarea
+      id="message"
+      rows={3}
+      placeholder="Hello Omkumar"
+      className="poppins-light shadow-input flex w-full min-h-[100px] rounded-md border-none bg-gray-50 px-3 py-2 text-sm text-black placeholder:text-neutral-400 focus-visible:ring-[2px] focus-visible:ring-neutral-400 focus-visible:outline-none dark:bg-black dark:text-white dark:shadow-[0px_0px_1px_1px_#404040] dark:focus-visible:ring-neutral-600"
+      value={senderMessage}
+      onChange={(e) => setSenderMessage(e.target.value)}
+    />
+  </LabelInputContainer>
 
-        <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+  {/* Button */}
+  <button
+    className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+    onClick={(e) => {
+      e.preventDefault();
+      console.log("Form submitted");
+    }}
+    type="button"
+  >
+    CONTACT &rarr;
+    <BottomGradient />
+  </button>
 
-
-
-
-
-    {/* Links */}
-
-
-
-
-
-      </form>
+  <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+</div>
     </div>
   );
 }
