@@ -105,16 +105,9 @@
 
 html,
 body {
-  overflow: hidden;
   height: 100%;
-  margin: 0;
-  padding: 0;
-  scrollbar-width: none;       /* Firefox */
-  -ms-overflow-style: none;    /* IE/Edge */
-}
-
-body::-webkit-scrollbar {
-  display: none;               /* Chrome, Safari */
+  overflow-y: auto; /* or scroll */
+  -webkit-overflow-scrolling: touch; /* for smooth scroll on iOS */
 }
 
 /* ---------- Font Utility Classes ---------- */
