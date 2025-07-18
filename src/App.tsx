@@ -10,33 +10,35 @@ import Community from './components/ui/Community';
 const App = () => {
   return (
     <div>
-      {/* Scroll-based animation section */}
-          <ZoomOnScroll />
-      {/* Section reveal on scroll */}
-          <RevealSection />
+      <div id = "home">
+        {/* Scroll-based animation section */}
+            <ZoomOnScroll />
+        {/* Section reveal on scroll */}
+            <RevealSection />
+      </div>
 
   {/* Navigation  */}
     <div className="fixed -bottom-[190px] left-0 right-0 z-[999] flex justify-center">
       <FloatingNav />
     </div>
 
-      <div>
+      <div id="community">
         <Community/>
       </div>
       {/* Tech Stack  */}
-      <div>
+      <div id="techStack">
         <TechStack />
       </div>
 
-        <div>
+        <div id="more">
             <MoreAbtMe />
         </div>
       {/* Timeline section */}
-      <div className="bg-white dark:bg-neutral-950">
+      <div id="projects" className="bg-white dark:bg-neutral-950">
         <Projects />
       </div>
       {/* Signup form section */}
-    <div className="h-screen flex items-center justify-center">
+    <div id="contact" className="h-screen flex items-center justify-center">
       <ContactForm />
     </div>
     </div>
